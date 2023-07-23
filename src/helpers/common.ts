@@ -1,0 +1,1 @@
+export const getUrlFromOsrmOrg = (coordinates: number[][]) => "http://router.project-osrm.org/route/v1/driving/" + coordinates.map((coordinatesItem) => [coordinatesItem[1], coordinatesItem[0]]).join(";") + "?overview=full&geometries=geojson&steps=true&alternatives=false";
