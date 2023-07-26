@@ -25,10 +25,6 @@ function Map({ mapRoute, destinations }: MapProps): JSX.Element {
   const map = useMap(mapRef);
 
   useEffect(() => {
-    let isMounted = true;
-
-    if (!isMounted) { return; }
-
     if (map && !destinations) {
       markerGroup.clearLayers();
       routeGroup.clearLayers();
@@ -74,9 +70,6 @@ function Map({ mapRoute, destinations }: MapProps): JSX.Element {
       }
     }
 
-    return () => {
-      isMounted = false;
-    };
   }, [destinations, map, mapRoute]);
   return (
     <section
